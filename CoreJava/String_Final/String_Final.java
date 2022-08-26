@@ -1,17 +1,20 @@
-package CoreJava;
+package CoreJava.String_Final;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class CoreJava{
+public class String_Final{
     public static void main(String[] args) {
         System.out.println(Arrays.asList(String1()));
         System.out.println(String2("algorithm", "algorithms"));
         System.out.println(String3());
         System.out.println(String4(Arrays.asList("https", "www", "amazon", "com", "demo", "test", "abc")));
-        Final f = new Final(123456);
+        Final f = new Final();
+        f.modify("123456");
+        System.out.println(f.ID);
+        f.modify("654321");
         System.out.println(f.ID);
     }
 
@@ -55,11 +58,11 @@ public class CoreJava{
 
     // 4) Given a list of string array, combine them into one string sentence, return the string sentence
     public static String String4(List<String> list) {
-        String ans = "";
+        StringBuilder ans = new StringBuilder();
         for (String str : list) {
-            ans += str;
+            ans.append(str);
         }
-        return ans;
+        return ans.toString();
     }
 
 
@@ -68,13 +71,14 @@ public class CoreJava{
 /*------------------------- Final ---------------------------*/
 // Problems: define a final class and final method and final variable, modify the value of the variable in final method
 final class Final {
-    public final int ID;
+    public final StringBuilder ID;
 
-    public Final(int id) {
-        ID = modify(id);
+    public Final() {
+        ID = new StringBuilder();
     }
 
-    public final int modify(int ID) {
-        return ID;
+    public final void modify(String ID) {
+        this.ID.delete(0, ID.length());
+        this.ID.append(ID);
     }
 }
