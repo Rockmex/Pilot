@@ -23,7 +23,7 @@ public class Java8 {
         System.out.println("-------------------------");
         System.out.println("Problem 2: ");
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
-//        System.out.println(new MyStream.Interface(list, ((int o) -> o * 3)));
+        System.out.println(MyStream.MyMap(list, ( o -> o * 3)));
         System.out.println("-------------------------");
         System.out.println("Problem 3: ");
         // 3. "walabcwalexywalxzsfwalmx"  -- replace "wal" with "sams"
