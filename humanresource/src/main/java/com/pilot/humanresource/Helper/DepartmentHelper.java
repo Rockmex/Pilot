@@ -32,6 +32,7 @@ public class DepartmentHelper {
         repo.deleteDepartmentById(id);
     }
 
+    // Constructor-based
     @Autowired
     public DepartmentHelper(DepartmentRepository repo) {
         this.repo = repo;

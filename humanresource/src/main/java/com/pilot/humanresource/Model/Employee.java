@@ -1,20 +1,18 @@
 package com.pilot.humanresource.Model;
 
-import java.util.Date;
-
 public class Employee {
     private int id;
     private String name;
     private String job;
     private int managerId;
-    private Date hireDate;
+    private String hireDate;
     private double salary;
     private int deptId;
 
     public Employee() {
     }
 
-    public Employee(int id, String name, String job, int managerId, Date hireDate, double salary, int deptId) {
+    public Employee(int id, String name, String job, int managerId, String hireDate, double salary, int deptId) {
         this.id = id;
         this.name = name;
         this.job = job;
@@ -56,11 +54,11 @@ public class Employee {
         this.managerId = managerId;
     }
 
-    public Date getHireDate() {
+    public String getHireDate() {
         return hireDate;
     }
 
-    public void setHireDate(Date hireDate) {
+    public void setHireDate(String hireDate) {
         this.hireDate = hireDate;
     }
 

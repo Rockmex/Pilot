@@ -47,13 +47,13 @@ public class EmployeeController {
     }
 
     // Put service getter & setter at the bottom
-    public EmployeeService getEmployeeService() {
+    public EmployeeService getService() {
         return employeeService;
     }
 
     // Setter-based
     @Autowired
-    public void setEmployeeService(EmployeeService employeeService) {
+    public void setService(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 }

@@ -9,32 +9,32 @@ import java.util.List;
 
 @Component
 public class EmployeeHelper {
-    private EmployeeRepository employeeRepository;
+    private EmployeeRepository repo;
 
     public Employee getEmployeeById(int id) {
-        return employeeRepository.getEmployeeById(id);
+        return repo.getEmployeeById(id);
     }
 
     public List<Employee> getAllEmployees() {
-        return employeeRepository.getAllEmployees();
+        return repo.getAllEmployees();
     }
 
     public void updateEmployee(int id, Employee temp) {
-        employeeRepository.updateEmployee(id, temp);
+        repo.updateEmployee(id, temp);
     }
 
     public void newEmployee(Employee temp) {
-        employeeRepository.newEmployee(temp);
+        repo.newEmployee(temp);
     }
 
     public void deleteEmployeeById(int id) {
-        employeeRepository.deleteEmployeeById(id);
+        repo.deleteEmployeeById(id);
     }
 
     // Constructor-based
     @Autowired
     public EmployeeHelper(EmployeeRepository repo) {
-        this.employeeRepository = repo;
+        this.repo = repo;
     }
 
 }

@@ -41,6 +41,7 @@ public class DepartmentController {
         return service;
     }
 
+    // Setter-based
     @Autowired
     public void setService(DepartmentService service) {
         this.service = service;

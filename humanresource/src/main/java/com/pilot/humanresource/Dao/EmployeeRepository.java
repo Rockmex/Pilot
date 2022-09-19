@@ -14,8 +14,8 @@ public class EmployeeRepository {
 
     static {
         employees = new ArrayList<>();
-        employees.add(new Employee(1, "Luis", "manager", 0, new Date("2019-01-01"), 2000000.0, 1));
-        employees.add(new Employee(2, "Lucy", "developer", 1, new Date("2020-10-10"), 1000000.0, 1));
+        employees.add(new Employee(1, "Luis", "manager", 0, "2019-01-01", 2000000.0, 1));
+        employees.add(new Employee(2, "Lucy", "developer", 1, "2020-10-10", 1000000.0, 1));
     }
 
     public List<Employee> getAllEmployees(){
