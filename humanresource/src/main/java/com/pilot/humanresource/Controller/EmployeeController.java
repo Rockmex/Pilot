@@ -41,9 +41,8 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteEmployeeById(@PathVariable int id){
+    public void deleteEmployeeById(@PathVariable int id){
         employeeService.deleteEmployeeById(id);
-        return "/all";
     }
 
     // Put service getter & setter at the bottom

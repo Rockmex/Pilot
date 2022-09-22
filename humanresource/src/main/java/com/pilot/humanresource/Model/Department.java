@@ -1,25 +1,32 @@
 package com.pilot.humanresource.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "department")
 public class Department {
-    private int id;
+    @Id
+    private int deptid;
     private String name;
-    private String location;
+    private String loc;
 
     public Department() {
     }
 
-    public Department(int id, String name, String location) {
-        this.id = id;
+    public Department(int deptid, String name, String loc) {
+        this.deptid = deptid;
         this.name = name;
-        this.location = location;
+        this.loc = loc;
     }
 
-    public int getId() {
-        return id;
+    public int getDeptid() {
+        return deptid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setDeptid(int id) {
+        this.deptid = id;
     }
 
     public String getName() {
@@ -30,11 +37,11 @@ public class Department {
         this.name = name;
     }
 
-    public String getLocation() {
-        return location;
+    public String getLoc() {
+        return loc;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLoc(String loc) {
+        this.loc = loc;
     }
 }

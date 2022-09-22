@@ -13,23 +13,24 @@ public class DepartmentHelper {
     private DepartmentRepository repo;
 
     public Department getDepartmentById(int id) {
-        return repo.getDepartmentById(id);
+        return repo.findDepartmentByDeptid(id);
     }
 
     public List<Department> getAllDepartments() {
-        return repo.getAllDepartments();
+        return repo.findAll();
     }
 
     public void updateDepartment(int id, Department temp) {
-        repo.updateDepartment(id, temp);
+        Department dept = repo.findDepartmentByDeptid(id);
+        repo.save(temp);
     }
 
     public void newDepartment(Department temp) {
-        repo.newDepartment(temp);
+        repo.save(temp);
     }
 
     public void deleteDepartmentById(int id) {
-        repo.deleteDepartmentById(id);
+        repo.deleteById(id);
     }
 
     // Constructor-based

@@ -12,23 +12,24 @@ public class EmployeeHelper {
     private EmployeeRepository repo;
 
     public Employee getEmployeeById(int id) {
-        return repo.getEmployeeById(id);
+        return repo.findEmployeeByEmpid(id);
     }
 
     public List<Employee> getAllEmployees() {
-        return repo.getAllEmployees();
+        return repo.findAll();
     }
 
     public void updateEmployee(int id, Employee temp) {
-        repo.updateEmployee(id, temp);
+        Employee employee = repo.findEmployeeByEmpid(id);
+        repo.save(temp);
     }
 
     public void newEmployee(Employee temp) {
-        repo.newEmployee(temp);
+        repo.save(temp);
     }
 
     public void deleteEmployeeById(int id) {
-        repo.deleteEmployeeById(id);
+        repo.deleteById(id);
     }
 
     // Constructor-based
