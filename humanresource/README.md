@@ -45,3 +45,21 @@ CREATE TABLE department(
     CONSTRAINT pk_dept PRIMARY KEY (deptid)
 );
 ```
+
+2. Follow previous SpringBoot project, add a rest to repository flow for salary_report table. (GET, POST)
+```
+######################  SALARY REPORT TABLE #############
+DROP TABLE IF EXISTS salary_report;
+CREATE TABLE salary_report(
+    job        VARCHAR(9),
+    department VARCHAR(14),
+    salmin     DECIMAL(7,2),
+    salmax     DECIMAL(7,2),
+    salavg     DECIMAL(7,2),
+    saltotal   DECIMAL(8,2),
+    empcount   INT,
+    updatetime DATE,
+    CONSTRAINT pk_salary_report PRIMARY KEY (job, department)
+);
+```
+3. Turn DAO to JpaRepository
