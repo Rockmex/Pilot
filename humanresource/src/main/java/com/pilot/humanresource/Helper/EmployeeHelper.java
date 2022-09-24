@@ -21,7 +21,13 @@ public class EmployeeHelper {
 
     public void updateEmployee(int id, Employee temp) {
         Employee employee = repo.findEmployeeByEmpid(id);
-        repo.save(temp);
+        employee.setJob(temp.getJob());
+        employee.setName(temp.getName());
+        employee.setManager(temp.getManager());
+        employee.setHireDate(temp.getHireDate());
+        employee.setSalary(temp.getSalary());
+        employee.setDeptId(temp.getDeptId());
+        repo.save(employee);
     }
 
     public void newEmployee(Employee temp) {

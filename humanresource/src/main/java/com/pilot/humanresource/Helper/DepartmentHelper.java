@@ -22,7 +22,9 @@ public class DepartmentHelper {
 
     public void updateDepartment(int id, Department temp) {
         Department dept = repo.findDepartmentByDeptid(id);
-        repo.save(temp);
+        dept.setLoc(temp.getLoc());
+        dept.setName(temp.getName());
+        repo.save(dept);
     }
 
     public void newDepartment(Department temp) {
